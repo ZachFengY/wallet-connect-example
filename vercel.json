@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "buildCommand": "echo 'Using pre-built files'",
+  "outputDirectory": "dist",
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
+
