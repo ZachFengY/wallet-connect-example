@@ -1,0 +1,51 @@
+const n=`# balance
+
+## Description
+
+The balance of the connected wallet in decimal format. This is the native token balance (e.g., ETH for Ethereum, SOL for Solana).
+
+## Property
+
+\`balance?: string\`
+
+## Source
+
+\`useAccount()\` hook from \`@tomo-inc/wallet-connect-kit\`
+
+## Type
+
+\`string | undefined\` - Balance in decimal format (e.g., "1.5", "0.0")
+
+## Usage
+
+\`\`\`typescript
+import { useAccount } from "@tomo-inc/wallet-connect-kit";
+
+function BalanceDisplay() {
+  const { balance, address } = useAccount();
+
+  if (!address) {
+    return <div>Not connected</div>;
+  }
+
+  return (
+    <div>
+      <div>Balance: {balance || "0.0"}</div>
+    </div>
+  );
+}
+\`\`\`
+
+## Notes
+
+- Returns \`undefined\` if wallet is not connected or balance is not available
+- Balance is in decimal format, not wei or smallest unit
+- Balance may not be automatically updated - you may need to refresh or poll for updates
+- Format depends on the native currency of the chain
+
+## Related Properties
+
+- \`address\` - Wallet address
+- \`chainType\` - Current chain type
+- \`chainId\` - Current chain ID
+`;export{n as default};
